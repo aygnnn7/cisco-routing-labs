@@ -1,0 +1,20 @@
+hostname R1
+!
+interface Loopback0
+ ip address 1.1.1.1 255.255.255.255
+!
+interface GigabitEthernet0/0
+ ip address 10.0.12.1 255.255.255.252
+!
+interface FastEthernet1/0
+ ip address 10.0.13.1 255.255.255.252
+!
+router eigrp 100
+ variance 2
+ passive-interface Loopback0
+ network 10.0.12.0 0.0.0.3
+ network 10.0.13.0 0.0.0.3
+ network 1.1.1.1 0.0.0.0
+ no auto-summary
+!
+ip classless
