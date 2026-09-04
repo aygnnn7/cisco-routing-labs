@@ -1,0 +1,22 @@
+hostname R4
+
+interface Loopback0
+ ip address 4.4.4.4 255.255.255.255
+
+interface GigabitEthernet0/0
+ ip address 192.168.4.254 255.255.255.0
+
+interface FastEthernet1/0
+ ip address 10.0.24.2 255.255.255.252
+
+interface FastEthernet2/0
+ ip address 10.0.34.2 255.255.255.252
+
+router ospf 1
+ log-adjacency-changes
+ passive-interface GigabitEthernet0/0
+ passive-interface Loopback0
+ network 10.0.34.0 0.0.0.3 area 0
+ network 10.0.24.0 0.0.0.3 area 0
+ network 4.4.4.4 0.0.0.0 area 0
+ network 192.168.4.0 0.0.0.255 area 0
