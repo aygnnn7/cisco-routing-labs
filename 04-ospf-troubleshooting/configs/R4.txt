@@ -1,0 +1,12 @@
+hostname R4
+
+interface GigabitEthernet0/0
+ ip address 192.168.245.2 255.255.255.248
+
+interface GigabitEthernet0/1
+ ip address 192.168.34.2 255.255.255.252
+
+router ospf 1
+ log-adjacency-changes
+ network 192.168.34.2 0.0.0.0 area 0
+ network 192.168.245.2 0.0.0.0 area 0
