@@ -40,7 +40,7 @@ The lab was verified using:
 - `show ip ospf database external`
 - End-to-end ICMP connectivity
 - Packet Tracer Simulation Mode inspection of OSPF Hello packet fields
-
+![Hello Packet](ospf-hello-packet.png)
 ## Result
 
 All required OSPF adjacencies reached FULL state. R1 advertised the default route as a Type-5 external LSA, and R4 installed the `O*E2` default route through R2 (`10.0.24.1`) because that path had the lower internal OSPF cost to the ASBR.
