@@ -2,7 +2,7 @@
 
 ## Objective
 
-Configure EIGRP AS 100 across a four-router topology and enable unequal-cost load balancing on R1 toward the 192.168.4.0/24 LAN. Verify neighbor relationships, route installation, and end-to-end connectivity.
+I configured EIGRP on four routers and used two paths with different costs from R1 to the 192.168.4.0/24 LAN.
 
 ## Topology
 
@@ -11,30 +11,23 @@ Configure EIGRP AS 100 across a four-router topology and enable unequal-cost loa
 ## Concepts
 
 - EIGRP AS 100
-- IPv4 dynamic routing
-- /30 point-to-point networks
-- /32 loopback interfaces
-- Passive interfaces
-- Disabled automatic summarization
-- Unequal-cost load balancing with `variance 2`
+- Unequal-cost load balancing
+- Loopbacks and passive interfaces
 
 ## Configuration Highlights
 
-- R1 was configured with `variance 2` to install two unequal-cost EIGRP paths toward 192.168.4.0/24.
-- Loopback networks were advertised in EIGRP while the loopback interfaces were kept passive.
-- R4 advertised the 192.168.4.0/24 LAN while its LAN-facing interface remained passive.
-- EIGRP automatic summarization was disabled on all routers.
+- I set `variance 2` on R1 to allow both paths into the routing table.
+- I advertised the loopback networks and R4's LAN while keeping those interfaces passive.
+- I disabled automatic summarization on all four routers.
 
 ## Verification
 
-The lab was verified using EIGRP neighbor checks, protocol verification, routing-table inspection, and end-to-end ICMP testing.
+I checked EIGRP neighbors, protocol settings, and R1's routing table.
 
-- R1 installed 192.168.4.0/24 through 10.0.12.2 with metric 28672.
-- R1 also installed 192.168.4.0/24 through 10.0.13.2 with metric 30976.
-- PC1 successfully reached R1 Loopback0 at 1.1.1.1 with 0% packet loss.
-
-Key verification commands included `show ip eigrp neighbors`, `show ip protocols`, and `show ip route 192.168.4.0`.
+- The path through 10.0.12.2 had a metric of 28672.
+- The path through 10.0.13.2 had a metric of 30976.
+- PC1 could ping R1's loopback at 1.1.1.1 with no packet loss.
 
 ## Result
 
-EIGRP converged successfully across the topology, and R1 installed two unequal-cost routes toward the destination LAN. End-to-end connectivity remained operational after final configuration cleanup.
+R1 installed both paths to 192.168.4.0/24, even though their costs were different. The ping test also confirmed connectivity from PC1 to R1's loopback.
