@@ -1,6 +1,6 @@
 # Cisco Routing Labs
 
-Hands-on Cisco Packet Tracer labs focused on IPv4 routing, dynamic routing protocols, path selection, and troubleshooting.
+I use Cisco Packet Tracer to practice routing and troubleshoot network problems. These labs cover EIGRP, OSPF, and HSRP gateway redundancy.
 
 ## Labs
 
@@ -8,7 +8,4 @@ Hands-on Cisco Packet Tracer labs focused on IPv4 routing, dynamic routing proto
 - [OSPF Default Route Advertisement](02-ospf-default-route-advertisement/)
 - [OSPF Reference Bandwidth and Path Selection](03-ospf-reference-bandwidth-path-selection/)
 - [OSPF Troubleshooting and LSDB Analysis](04-ospf-troubleshooting/)
-
-## About
-
-Cisco Packet Tracer routing labs covering EIGRP, OSPF, route advertisement, path selection, verification, and troubleshooting.
+- [HSRPv2 Gateway Redundancy](05-hsrp-gateway-redundancy/)
