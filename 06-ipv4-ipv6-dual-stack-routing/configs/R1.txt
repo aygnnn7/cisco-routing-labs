@@ -1,0 +1,19 @@
+hostname R1
+!
+ipv6 unicast-routing
+!
+interface GigabitEthernet0/0
+ ip address 192.168.1.1 255.255.255.0
+ ipv6 address 2001:DB8:0:1::1/64
+!
+interface GigabitEthernet0/1
+ ip address 192.168.2.1 255.255.255.0
+ ipv6 address 2001:DB8:0:2::1/64
+!
+interface GigabitEthernet0/2
+ ip address 192.168.3.1 255.255.255.0
+ ipv6 address 2001:DB8:0:3::1/64
+!
+ip classless
+!
+end
