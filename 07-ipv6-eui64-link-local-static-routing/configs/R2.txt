@@ -1,0 +1,15 @@
+hostname R2
+!
+ipv6 unicast-routing
+!
+interface GigabitEthernet0/0
+ ip address 192.168.1.2 255.255.255.252
+ ipv6 enable
+!
+interface GigabitEthernet0/1
+ ip address 10.0.2.254 255.255.255.0
+ ipv6 address 2001:DB8:0:1::/64 eui-64
+!
+ip route 10.0.1.0 255.255.255.0 192.168.1.1
+!
+ipv6 route 2001:DB8::/64 GigabitEthernet0/0 FE80::230:F2FF:FE36:4501
