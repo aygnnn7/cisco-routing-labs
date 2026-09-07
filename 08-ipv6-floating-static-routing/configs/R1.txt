@@ -1,0 +1,15 @@
+hostname R1
+
+ipv6 unicast-routing
+
+interface GigabitEthernet0/0
+ ipv6 address 2001:DB8:0:1::1/64
+
+interface GigabitEthernet0/1
+ ipv6 address 2001:DB8:0:13::1/64
+
+interface Serial0/0/0
+ ipv6 enable
+
+ipv6 route 2001:DB8:0:3::/64 GigabitEthernet0/1 2001:DB8:0:13::2
+ipv6 route 2001:DB8:0:3::/64 Serial0/0/0 FE80::20B:BEFF:FED7:4901 5
