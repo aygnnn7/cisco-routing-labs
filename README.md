@@ -12,3 +12,11 @@ I use Cisco Packet Tracer to practice routing and troubleshoot network problems.
 - [IPv4/IPv6 Dual-Stack Routing](06-ipv4-ipv6-dual-stack-routing/)
 - [IPv6 EUI-64 and Link-Local Static Routing](07-ipv6-eui64-link-local-static-routing/)
 - [IPv6 Floating Static Route Redundancy](08-ipv6-floating-static-routing/)
+
+## Learning Resources
+
+These labs are part of my ongoing networking and infrastructure training, supported by:
+
+- Cisco Networking Academy
+- Jeremy's IT Lab
+- OneCareer.de – Cloud Computing und Infrastruktur Weiterbildung
